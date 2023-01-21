@@ -8,11 +8,19 @@
     <button class="btn">Buy Cheap Airtime</button>
   </span>
   </div>
-  <div class="skewed">
-    <h2>Bambaswap makes it possible for you to convert your airtime to MPesa instantly
-      (In less than 1 minute).We also sell the cheapest airtime and data bundles in Kenya
-      at 10-15% discount.</h2>
-  </div>
+  <div class="group Box text-center about skew" id="about">
+      <div class="wrapper">
+        <h2>Welcome to BambaSwap</h2>
+        <p>Bambaswap makes it possible for you to convert your airtime to MPesa instantly
+          (In less than 1 minute).
+          We also sell the cheapest airtime and data bundles in Kenya at 10-15% discount.</p>
+          <p>Bambaswap is Kenya’s  No.1 airtime to Mpesa conversion service. We are the cheapest,
+             fastest &amp;
+            most reliable airtime to cash conversion service in Kenya.
+      Simply Dial <a href="tel:*384*3#">*384*3#</a> or
+      </p>
+    </div>
+</div>
 </template>
 
 <script>
@@ -64,9 +72,37 @@ export default {
   background: transparent;
   text-decoration: none;
 }
-.skewed {
-  background-color: #0e375a;
-  color: #fff;
+.skew, .skewUp {
+  position: relative;
   z-index: 2;
+}
+.Box {
+  padding: 80px 0;
+}
+.about, .faqs, .ourproducts {
+  background: #0e375a;
+  color: #fff;
+}
+.group {
+  clear: both;
+}
+.text-center {
+  text-align: center;
+}
+.skew:after {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+  z-index: -1;
+}
+.group:after {
+  clear: both;
 }
 </style>
