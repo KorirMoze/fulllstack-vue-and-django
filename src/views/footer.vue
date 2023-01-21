@@ -5,10 +5,10 @@
 </template>
 <script>
 export default {
-    name: 'footerView',
-    components: {
-        
-    },
+  name: 'footerView',
+  components: {
+
+  },
 };
 </script>
 <style>
