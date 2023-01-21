@@ -27,27 +27,33 @@
   <h2>Why Choose Glownet</h2>
   <div class="columns">
     <div class="column">
-      First column
+      <i class="fa-solid fa-gauge-simple-max"></i>
+      <p>Fast - It takes seconds</p>
     </div>
     <div class="column">
-      Second column
+      <p>Reliable & Available 24/7</p>
     </div>
     <div class="column">
-      Third column
+      <p>Convenient & Secure</p>
     </div>
   </div>
   <div class="columns">
     <div class="column">
-      First column
+      <p>You can buy using Fuliza</p>
     </div>
     <div class="column">
-      Second column
+      <p>Zero Transaction Fees</p>
     </div>
     <div class="column">
-      Third column
+      <p>Cheapest Airtime & Data in Kenya</p>
     </div>
   </div>
 </div>
+
+<div class="data-bundles">
+  <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
+</div>
+
 </template>
 
 <script>
@@ -102,7 +108,7 @@ export default {
 .skew, .skewUp {
   position: relative;
   z-index: 2;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 .Box {
   padding: 80px 0;
@@ -139,12 +145,22 @@ export default {
 }
 .why{
   background-color: transparent;
+  background-image: url("../assets/Mobile-data.jpg");
+  padding-top: 1rem;
+  z-index: -10;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  padding-bottom: 4rem;
 }
 .why h2 {
+  margin-top: 3rem;
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
-  color: white;
+  color: rgb(244, 12, 12);
+  z-index: 4;
 }
 .columns{
   color: wheat;
@@ -152,5 +168,6 @@ export default {
   justify-content: center;
   align-items: center;
   margin-left: 10rem;
+  opacity: 5;
 }
 </style>
