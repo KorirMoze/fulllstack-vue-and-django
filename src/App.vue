@@ -4,7 +4,7 @@
         <div class="navbar-brand">
           <router-link to="/" class="navbar-item"><strong>Hello</strong></router-link>
           <a class="navbar-burger" aria-label="menu" arial-expanded="false" data-target=
-          "navbar-menu" @click="showMobileMenu = !showMobileMenu">
+          "navbar-menu">
             <span arial-hidden="true"></span>
             <span arial-hidden="true"></span>
             <span arial-hidden="true"></span>
@@ -42,4 +42,7 @@ export default {
 </script>
 <style lang="scss">
 @import '../node_modules/bulma';
+.section {
+  padding: 0 0;
+}
 </style>
