@@ -25,6 +25,9 @@
       <section class="section">
         <router-view/>
       </section>
+      <section class="section2">
+        <router-section2/>
+      </section>
       <footer class="footer">
         <p class="has-text-centered">Copyright (c) 2022</p>
       </footer>
@@ -44,5 +47,7 @@ export default {
 @import '../node_modules/bulma';
 .section {
   padding: 0 0;
+  background-color: transparent;
+  background-image: url("../assets/bg.png");
 }
 </style>

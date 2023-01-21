@@ -10,16 +10,43 @@
   </div>
   <div class="group Box text-center about skew" id="about">
       <div class="wrapper">
-        <h2>Welcome to BambaSwap</h2>
-        <p>Bambaswap makes it possible for you to convert your airtime to MPesa instantly
-          (In less than 1 minute).
-          We also sell the cheapest airtime and data bundles in Kenya at 10-15% discount.</p>
-          <p>Bambaswap is Kenya’s  No.1 airtime to Mpesa conversion service. We are the cheapest,
+        <h2>Welcome to GlowNet Solutions</h2>
+        <p>Glownet Offers the best Data Bundles acroos all the three networks Safaricom, Aitel And
+          Telkom,
+          you can purchase it  instantly
+          (In less than 1 minute).All our Deals Are valid for 30 days
+          </p>
+          <p>Glownet is Kenya’s  No.1 airtime data Bundles dealer. We are the most affordable,
              fastest &amp;
-            most reliable airtime to cash conversion service in Kenya.
-      Simply Dial <a href="tel:*384*3#">*384*3#</a> or
+            most reliable  Kenya.
+      Take a look at our offers
       </p>
     </div>
+</div>
+<div class="why">
+  <h2>Why Choose Glownet</h2>
+  <div class="columns">
+    <div class="column">
+      First column
+    </div>
+    <div class="column">
+      Second column
+    </div>
+    <div class="column">
+      Third column
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      First column
+    </div>
+    <div class="column">
+      Second column
+    </div>
+    <div class="column">
+      Third column
+    </div>
+  </div>
 </div>
 </template>
 
@@ -75,6 +102,7 @@ export default {
 .skew, .skewUp {
   position: relative;
   z-index: 2;
+  margin-bottom: 4rem;
 }
 .Box {
   padding: 80px 0;
@@ -104,5 +132,25 @@ export default {
 }
 .group:after {
   clear: both;
+}
+.wrapper h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.why{
+  background-color: transparent;
+}
+.why h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+}
+.columns{
+  color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rem;
 }
 </style>
