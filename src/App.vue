@@ -47,7 +47,5 @@ export default {
 @import '../node_modules/bulma';
 .section {
   padding: 0 0;
-  background-color: transparent;
-  background-image: url("../assets/bg.png");
 }
 </style>
