@@ -11,16 +11,18 @@
             </select>
             <select v-model="selected1" class="sele">
                 <option disabled value="" class="selections">Gift Data Deals to a friend</option>
-                <option>Abujubuju</option>
-                <option>B</option>
-                <option>C</option>
+                <option>Sh70=2GB  for 30days</option>
+                <option>Sh70=2GB  for 30days</option>
+                <option>Sh70=2GB  for 30days</option>
+                <option>Sh70=2GB  for 30days</option>
             </select>
             <select v-model="selected2" class="sele">
             <option disabled value="" class="selections">Buy Airtime And Get a bonus</option>
-            <option>Sh70=2GB  for 30days</option>
-            <option>Sh70=2GB  for 30days</option>
-            <option>Sh70=2GB  for 30days</option>
-            <option>Sh70=2GB  for 30days</option>
+            <option class="selections">Sh70=2GB  for 30days \n
+                <p>fgdsahbxnkmsjdh</p></option>
+            <option class="selections">Sh70=2GB  for 30days</option>
+            <option class="selections">Sh70=2GB  for 30days</option>
+            <option class="selections">Sh70=2GB  for 30days</option>
             </select>
             </label>
         </div>
@@ -51,20 +53,25 @@ export default {
 }
 .sele{
     width: 100%;
-    height: 5vh;
+    height: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 5px;
     margin: auto;
     text-align: center;
+    z-index: 99;
+    font-size: 1.5rem;
 }
 .selections{
     background-color: #0e465a;
+    height: 5vh;
 }
 .card1 {
     border-radius: 10px;
     padding: 5rem 1rem;
     background-color: white;
+    box-shadow: 1px 2px 3px 4px rgba(24, 24, 24, 0.4);
+    z-index: 10;
 }
 </style>
