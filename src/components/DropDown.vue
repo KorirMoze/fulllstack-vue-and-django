@@ -1,53 +1,29 @@
 <template>
-    <!-- <div class="data-bundles">
-        <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
-        <div class="wrapper-group">
-          <div class="dropdown">
-            <div class="dropdown-trigger">
-              <button id ='but' class="button" aria-haspopup="true" aria-controls="dropdown-menu3" >
-                <span>Buy Monthly Data Deals</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
-          </div>
+    <div class="datab">
+        <div class="card1">
+            <label for="first-checkbox">
+            <!-- Selected: {{ selected }} -->
+            <select v-model="selected" class="sele">
+            <option disabled value="" class="selections">Buy Amazing Data Bundles Deal</option>
+            <option></option>
+            <option>B</option>
+            <option>C</option>
+            </select>
+            <select v-model="selected1" class="sele">
+                <option disabled value="" class="selections">Gift Data Deals to a friend</option>
+                <option>Abujubuju</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <select v-model="selected2" class="sele">
+            <option disabled value="" class="selections">Buy Airtime And Get a bonus</option>
+            <option>Sh70=2GB  for 30days</option>
+            <option>Sh70=2GB  for 30days</option>
+            <option>Sh70=2GB  for 30days</option>
+            <option>Sh70=2GB  for 30days</option>
+            </select>
+            </label>
         </div>
-      </div>
-    <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-        <div class="dropdown-content">
-          <a href="#" class="dropdown-item">
-            Overview
-          </a>
-          <a href="#" class="dropdown-item">
-            Modifiers
-          </a>
-          <a href="#" class="dropdown-item">
-            Grid
-          </a>
-          <a href="#" class="dropdown-item">
-            Form
-          </a>
-          <a href="#" class="dropdown-item">
-            Elements
-          </a>
-          <div>
-            dsfagvhzbjnmfgvdsbh
-          </div>
-          <a href="#" class="dropdown-item">
-            Layout
-          </a>
-          <hr class="dropdown-divider">
-          <a href="#" class="dropdown-item">
-            More
-          </a>
-        </div>
-      </div> -->
-
-    <div>
-        <select v-model="author">
-            <option v-for="author in authors">{{author}}</option>
-        </select>
     </div>
 </template>
 <script>
@@ -58,8 +34,37 @@ export default {
   data() {
     return {
       authors: ['moses', 'korir'],
+      selected: '',
+      selected1: '',
+      selected2: '',
     };
   },
 };
 </script>
-<style></style>
+<style>
+.datab {
+    padding: 3rem 10rem;
+    position: relative;
+    width: 100%;
+    background-color: #0e375a;
+    align-items: center;
+}
+.sele{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px;
+    margin: auto;
+    text-align: center;
+}
+.selections{
+    background-color: #0e465a;
+}
+.card1 {
+    border-radius: 10px;
+    padding: 5rem 1rem;
+    background-color: white;
+}
+</style>

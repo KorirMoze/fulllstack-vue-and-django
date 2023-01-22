@@ -9,7 +9,6 @@
               <span arial-hidden="true"></span>
               <span arial-hidden="true"></span>
             </a>
-            <DropDown title="Services" :items="services" />
           </div>
           <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active':showMobileMenu }">
             <div class="navbar-end">
@@ -27,13 +26,8 @@
 
 </template>
 <script>
-import DropDown from './DropDown.vue';
-
 export default {
   name: 'navbarC',
-  components: {
-    DropDown,
-  },
   data() {
     return {
       services: [{
