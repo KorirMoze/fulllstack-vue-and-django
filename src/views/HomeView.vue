@@ -49,56 +49,33 @@
     </div>
   </div>
 </div>
-
-<div class="data-bundles">
-  <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
-  <div class="wrapper-group">
-    <ul>
-      <li>BUY Monthly Data Deals</li>
-      <li>Buy Monthly Data Deals For a Friend</li>
-      <li>Get Airtime Deals</li>
-    </ul>
-  </div>
-  <div class="dropdown is-active">
-    <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-        <span>Dropdown button</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-      <div class="dropdown-content">
-        <a href="#" class="dropdown-item">
-          Dropdown item
-        </a>
-        <a class="dropdown-item">
-          Other dropdown item
-        </a>
-        <a href="#" class="dropdown-item is-active">
-          Active dropdown item
-        </a>
-        <a href="#" class="dropdown-item">
-          Other dropdown item
-        </a>
-        <hr class="dropdown-divider">
-        <a href="#" class="dropdown-item">
-          With a divider
-        </a>
-      </div>
-    </div>
-  </div>
+<div class="drop">
+  <DropDown />
 </div>
 
 </template>
 
 <script>
 // @ is an alias to /src
+import DropDown from '../components/DropDown.vue';
 
 export default {
   name: 'HomeView',
   components: {
+    DropDown,
+  },
+  data() {
+    return {
+      services: [{
+        title: 'web',
+        link: '#',
+      },
+      {
+        title: 'Design',
+        link: '#',
+      },
+      ],
+    };
   },
 };
 </script>
@@ -215,5 +192,8 @@ export default {
   padding-top: 5rem;
   font-size: 2rem;
   text-align: center;
+}
+#but {
+  width: 180%;
 }
 </style>
