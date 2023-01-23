@@ -24,6 +24,15 @@
             <option class="selections">Sh70=2GB  for 30days</option>
             <option class="selections">Sh70=2GB  for 30days</option>
             </select>
+            <div class="custom-select" style="width:200px;">
+                <select>
+                  <option value="0">Select car:</option>
+                  <option value="1">Audi</option>
+                  <option value="2">BMW</option>
+                  <option value="3">Citroen</option>
+                  <option value="4">Ford</option>
+                </select>
+              </div>
             </label>
         </div>
     </div>
@@ -61,11 +70,14 @@ export default {
     margin: auto;
     text-align: center;
     z-index: 99;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .selections{
     background-color: #0e465a;
     height: 5vh;
+}
+.selection:hover {
+    background-color: red;
 }
 .card1 {
     border-radius: 10px;
