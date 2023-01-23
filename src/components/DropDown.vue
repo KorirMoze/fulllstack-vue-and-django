@@ -22,7 +22,7 @@
             <select v-model="selected3" class="sele">
             <option disabled value="" class="selections">Buy Airtime And Get a bonus</option>
             <option class="selections">Sh50=100  bob airtime</option>
-            <option class="selections">Sh100200  bob airtime</option>
+            <option class="selections">Sh100=200  bob airtime</option>
             <option class="selections">Sh200=500  bob airtime</option>
             <option class="selections">Sh500=200  bob airtime</option>
             </select>
