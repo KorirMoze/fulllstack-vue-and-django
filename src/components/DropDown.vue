@@ -37,7 +37,6 @@
 export default {
   name: 'dropDown',
   props: ['title', 'items'],
-
   data() {
     return {
       authors: ['moses', 'korir'],
