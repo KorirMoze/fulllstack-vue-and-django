@@ -7,12 +7,15 @@
         <div class="card1">
             <label for="first-checkbox">
             <!-- Selected: {{ selected }} -->
-            <select v-model="selected" class="sele">
+            <select v-model="selectedValue" class="sele">
             <option disabled value="" class="selections">Buy Amazing Data Bundles Deal</option>
-            <option class="selections"><h3>Buy data deals for Self</h3></option>
-            <option class="selections"><h3>Buy data deals for a friend</h3></option>
+                <option class="selections" v-for="option in options" :value="option.value"
+                :key="option">
+                    {{ option.text }}
+                </option>
             </select>
-            <select v-model="selected2" class="sele">
+            <select v-model="selected3" :disabled="selectedValue === 'disable'"
+             class="sele">
                 <option disabled value="" class="selections">Available Data Deals options</option>
                 <option class="selections">Sh70=2GB  for 30days</option>
                 <option class="selections">Sh150=5GB  for 30days</option>
@@ -29,7 +32,8 @@
             </label>
         </div>
         <div class="friend-no">
-            <input class="phone-no" placeholder="Enter Friends Phone Number">
+            <input class="phone-no" placeholder="Enter Friends Phone Number"
+            v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
     </div>
 </template>
@@ -44,6 +48,16 @@ export default {
       selected1: '',
       selected2: '',
       selected3: '',
+      selectedValue: '',
+      secondSelectedValue: '',
+      options: [
+        { text: 'Buy data deals for Self', value: 'disable' },
+        { text: 'Buy data deals for a friend', value: 'enable' },
+      ],
+      secondOptions: [
+        { text: 'Option 1', value: 'option1' },
+        { text: 'Option 2', value: 'option2' },
+      ],
     };
   },
 };
