@@ -14,7 +14,7 @@
                     {{ option.text }}
                 </option>
             </select>
-            <select v-model="selected3" :disabled="selectedValue === 'disable'"
+            <select v-model="selected2"
              class="sele">
                 <option disabled value="" class="selections">Available Data Deals options</option>
                 <option class="selections">Sh70=2GB  for 30days</option>
@@ -36,14 +36,25 @@
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
     </div>
+    <div class="person">
+        <h1>Right here</h1>
+        <div class="column is-3" v-for="person in Persons"
+        :key="person.id">
+        <h3>{{person.name}}</h3>
+    </div>
+
+    </div>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
   name: 'dropDown',
   props: ['title', 'items'],
   data() {
     return {
       authors: ['moses', 'korir'],
+      Persons: [],
       selected: '',
       selected1: '',
       selected2: '',
@@ -59,6 +70,21 @@ export default {
         { text: 'Option 2', value: 'option2' },
       ],
     };
+  },
+  mounted() {
+    this.getPersons();
+  },
+  methods: {
+    getPersons() {
+      axios
+        .get('/api/v1/persons/')
+        .then((response) => {
+          this.Persons = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>
@@ -126,5 +152,8 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+  }
+  .person {
+    margin-top: 20px;
   }
 </style>
