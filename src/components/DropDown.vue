@@ -17,10 +17,8 @@
             <select v-model="selected2"
              class="sele">
                 <option disabled value="" class="selections">Available Data Deals options</option>
-                <option class="selections">Sh70=2GB  for 30days</option>
-                <option class="selections">Sh150=5GB  for 30days</option>
-                <option class="selections">Sh300=10GB  for 30days</option>
-                <option class="selections">Sh500=25GB  for 30days</option>
+                <option class="selections" v-for="data in Datas"
+                :key="data.id">{{data.bundle}} for Shs.{{data.price }}bob</option>
             </select>
             <select v-model="selected3" class="sele">
             <option disabled value="" class="selections">Buy Airtime And Get a bonus</option>
@@ -38,9 +36,9 @@
     </div>
     <div class="person">
         <h1>Right here</h1>
-        <div class="column is-3" v-for="person in Persons"
-        :key="person.id">
-        <h3>{{person.name}}</h3>
+        <div class="column is-3" v-for="credo in Airtimes"
+        :key="credo.id">
+        <h3>{{credo.cred}}</h3>
     </div>
 
     </div>
@@ -54,7 +52,8 @@ export default {
   data() {
     return {
       authors: ['moses', 'korir'],
-      Persons: [],
+      Datas: [],
+      Airtimes: [],
       selected: '',
       selected1: '',
       selected2: '',
@@ -72,14 +71,25 @@ export default {
     };
   },
   mounted() {
-    this.getPersons();
+    this.getDatas();
+    this.getAirtimes();
   },
   methods: {
-    getPersons() {
+    getDatas() {
       axios
         .get('/api/v1/persons/')
         .then((response) => {
-          this.Persons = response.data;
+          this.Datas = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getAirtimes() {
+      axios
+        .get('/api/v1/credits/')
+        .then((response) => {
+          this.Airtimes = response.data;
         })
         .catch((error) => {
           console.log(error);
