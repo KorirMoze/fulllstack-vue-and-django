@@ -21,11 +21,9 @@
                 :key="data.id">{{data.bundle}} for Shs.{{data.price }}bob</option>
             </select>
             <select v-model="selected3" class="sele">
-            <option disabled value="" class="selections">Buy Airtime And Get a bonus</option>
-            <option class="selections">Sh50=100  bob airtime</option>
-            <option class="selections">Sh100=200  bob airtime</option>
-            <option class="selections">Sh200=500  bob airtime</option>
-            <option class="selections">Sh500=200  bob airtime</option>
+            <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
+            <option class="selections" v-for="credo in Airtimes"
+            :key="credo.id">{{credo.cred}}</option>
             </select>
             </label>
         </div>
@@ -34,14 +32,14 @@
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
     </div>
-    <div class="person">
+    <!-- <div class="person">
         <h1>Right here</h1>
         <div class="column is-3" v-for="credo in Airtimes"
         :key="credo.id">
         <h3>{{credo.cred}}</h3>
     </div>
 
-    </div>
+    </div> -->
 </template>
 <script>
 import axios from 'axios';
