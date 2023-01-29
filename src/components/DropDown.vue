@@ -1,5 +1,6 @@
 <template>
     <div class="datab">
+
         <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
         <div class="friend-no" id="user-no">
             <input class="phone-no" placeholder="Enter Your Phone Number">
@@ -148,7 +149,6 @@ export default {
 .phone-no {
     width: 30%;
     height: 4vh;
-    box-shadow: 1px 2px 3px 4px rgba(24, 24, 24, 0.4);
 }
 #user-no {
     margin-bottom: 1.5rem;
