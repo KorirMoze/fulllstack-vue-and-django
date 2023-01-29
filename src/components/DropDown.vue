@@ -1,6 +1,6 @@
 <template>
     <div class="datab">
-
+      <form v-on:submit.prevent="submitForm">
         <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
         <div class="friend-no" id="user-no">
             <input class="phone-no" placeholder="Enter Your Phone Number">
@@ -9,11 +9,11 @@
             <label for="first-checkbox">
             <!-- Selected: {{ selected }} -->
             <select v-model="selectedValue" class="sele">
-            <option disabled value="" class="selections">Buy Amazing Data Bundles Deal</option>
-                <option class="selections" v-for="option in options" :value="option.value"
-                :key="option">
-                    {{ option.text }}
-                </option>
+              <option disabled value="" class="selections">Buy Amazing Data Bundles Deal</option>
+              <option class="selections" v-for="option in options" :value="option.value"
+              :key="option">
+                  {{ option.text }}
+              </option>
             </select>
             <select v-model="selected2"
              class="sele">
@@ -32,7 +32,11 @@
             <input class="phone-no" placeholder="Enter Friends Phone Number"
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
+        <button type="submit">Add Task</button>
+        </form>
     </div>
+     selected {{ selected2 }}
+     selected {{ selected3 }}
     <!-- <div class="person">
         <h1>Right here</h1>
         <div class="column is-3" v-for="credo in Airtimes"
@@ -60,8 +64,8 @@ export default {
       selectedValue: '',
       secondSelectedValue: '',
       options: [
-        { text: 'Buy data deals for Self', value: 'disable' },
-        { text: 'Buy data deals for a friend', value: 'enable' },
+        { text: 'Buy Data deals for Self', value: 'disable' },
+        { text: 'Buy Data deals for a friend', value: 'enable' },
       ],
       secondOptions: [
         { text: 'Option 1', value: 'option1' },
@@ -93,6 +97,24 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    async submitForm() {
+      try {
+        // Send a POST request to the API
+        const response = await this.$http.post('http://localhost:8000/api/v1/credits/', {
+          title: this.selected2,
+          description: this.selected3,
+          completed: false,
+        });
+        // Append the returned data to the tasks array
+        this.tasks.push(response.data);
+        // Reset the title and description field values.
+        this.selected2 = '';
+        this.selected3 = '';
+      } catch (error) {
+        // Log the error
+        console.log(error);
+      }
     },
   },
 };
