@@ -35,7 +35,11 @@
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
         <button type="submit" @click="post">Add Task</button>
+        <button @click="postData1">Post</button>
         </form>
+        <div v-if="submitted">
+          <h3>You have purchased</h3>
+        </div>
     </div>
      <!-- selected {{ selected2 }} -->
      selected {{ selected2 }}
@@ -47,8 +51,6 @@
     </div>
 
     </div> -->
-    <p>Message is: {{ message }}</p>
-    <input v-model="message" placeholder="edit me" />
 </template>
 <script>
 import axios from 'axios';
@@ -76,6 +78,7 @@ export default {
         { text: 'Option 1', value: 'option1' },
         { text: 'Option 2', value: 'option2' },
       ],
+      submitted: false,
     };
   },
   mounted() {
@@ -105,18 +108,25 @@ export default {
     },
     async postData() {
       try {
-        const response = await axios.post('https://jsonplaceholder.typicode.com/posts', { phone: this.phone });
+        const response = await axios.post('http://127.0.0.1:8000/api/v1/credits/', {
+          phone: this.phone,
+          selected3: this.selected3,
+          selected2: this.selected2,
+        });
         console.log(response.data);
+        this.submitted = true;
       } catch (error) {
         console.error(error);
       }
     },
     postData1() {
-      axios.post('/api/airtime', {
+      axios.post('http://127.0.0.1:8000/api/v1/credits/', {
         selected3: this.selected3,
+        selected2: this.selected2,
       })
         .then((response) => {
           console.log(response);
+          this.submitted = true;
         })
         .catch((error) => {
           console.log(error);
