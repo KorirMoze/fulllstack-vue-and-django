@@ -1,7 +1,6 @@
 <template>
     <div class="datab">
       <form v-on:submit.prevent="submitForm">
-        {% csrf_token %}
         <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
         <div class="friend-no" id="user-no">
             <input class="phone-no" placeholder="Enter Your Phone Number">
@@ -125,6 +124,23 @@ export default {
 .datab h1 {
     font-size: 2rem;
     text-align: center;
+}
+@media screen and (max-width: 1200px){
+  .datab {
+    width: 100%;
+    display: flex;
+    padding: 1rem 1rem;
+  }
+  .sele {
+    text-align: center;
+  }
+  .datab h1 {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+  .phone-no {
+    width: 60%!important;
+  }
 }
 .sele{
     width: 100%;

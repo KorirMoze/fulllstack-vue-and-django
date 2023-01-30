@@ -25,28 +25,15 @@
 </div>
 <div class="why">
   <h2>Why Choose Glownet</h2>
-  <div class="columns">
-    <div class="column">
-      <i class="fa-solid fa-gauge-simple-max"></i>
-      <p>Fast - It takes seconds</p>
-    </div>
-    <div class="column">
-      <p>Reliable & Available 24/7</p>
-    </div>
-    <div class="column">
-      <p>Convenient & Secure</p>
-    </div>
+  <div class="columns is-mobile">
+    <div class="column">Fast - It takes seconds</div>
+    <div class="column">Reliable & Available 24/7</div>
+    <div class="column">Convenient & Secure</div>
   </div>
-  <div class="columns">
-    <div class="column">
-      <p>You can buy using Fuliza</p>
-    </div>
-    <div class="column">
-      <p>Zero Transaction Fees</p>
-    </div>
-    <div class="column">
-      <p>Cheapest Airtime & Data in Kenya</p>
-    </div>
+  <div class="columns is-mobile">
+    <div class="column">>ou can buy using Fuliza</div>
+    <div class="column">Zero Transaction Fees</div>
+    <div class="column">Cheapest Airtime & Data in Kenya</div>
   </div>
 </div>
 <div class="drop">
@@ -180,13 +167,13 @@ export default {
   background-attachment: fixed;
   height: 100%;
   padding-bottom: 4rem;
+  color: black;
 }
 .why h2 {
   margin-top: 3rem;
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
-  color: rgb(244, 12, 12);
   z-index: 4;
 }
 .columns{
@@ -194,8 +181,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 10rem;
+  margin-left: 1rem;
   opacity: 5;
+  font-weight: 800;
 }
 .data-bundles{
   background: #0e375a;
