@@ -2,8 +2,10 @@
     <div class="datab">
       <form v-on:submit.prevent="submitForm">
         <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
-        <div class="friend-no" id="user-no">
-            <input class="phone-no" placeholder="Enter Your Phone Number">
+        phonen {{ phone }}
+        <div class="friend-no" id="user-no" >
+            <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
+            <button @click="postData">Post Data</button>
         </div>
         <div class="card1">
             <label for="first-checkbox">
@@ -18,8 +20,8 @@
             <select v-model="selected2"
              class="sele">
                 <option disabled value="" class="selections">Available Data Deals options</option>
-                <option class="selections" v-for="data in Datas"
-                :key="data.id">{{data.bundle}} for Shs.{{data.price }}bob</option>
+                <option class="selections" v-for="dat in Datas"
+                :key="dat.id">{{dat.bundle}} for Shs.{{dat.price }}bob</option>
             </select>
             <select v-model="selected3" class="sele">
             <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
@@ -32,11 +34,11 @@
             <input class="phone-no" placeholder="Enter Friends Phone Number"
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
-        <button type="submit" @click="submitForm">Add Task</button>
+        <button type="submit" @click="post">Add Task</button>
         </form>
     </div>
+     <!-- selected {{ selected2 }} -->
      selected {{ selected2 }}
-     selected {{ selected3 }}
     <!-- <div class="person">
         <h1>Right here</h1>
         <div class="column is-3" v-for="credo in Airtimes"
@@ -45,6 +47,8 @@
     </div>
 
     </div> -->
+    <p>Message is: {{ message }}</p>
+    <input v-model="message" placeholder="edit me" />
 </template>
 <script>
 import axios from 'axios';
@@ -63,6 +67,7 @@ export default {
       selected3: '',
       selectedValue: '',
       secondSelectedValue: '',
+      phone: '',
       options: [
         { text: 'Buy Data deals for Self', value: 'disable' },
         { text: 'Buy Data deals for a friend', value: 'enable' },
@@ -98,16 +103,24 @@ export default {
           console.log(error);
         });
     },
-    async submitForm() {
-      const data = {
-        selected2: this.selected2,
+    async postData() {
+      try {
+        const response = await axios.post('https://jsonplaceholder.typicode.com/posts', { phone: this.phone });
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    postData1() {
+      axios.post('/api/airtime', {
         selected3: this.selected3,
-      };
-        // Send a POST request to the API
-      const response = await this.axios.post('http://localhost:8000/api/v1/credits/', data).data;
-      // Append the returned data to the tasks array
-      // Log the error
-      console.log(response);
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
