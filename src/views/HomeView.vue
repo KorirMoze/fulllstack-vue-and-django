@@ -91,6 +91,19 @@ export default {
   font-size: 2rem;
   color:white;
 }
+@media screen  and (max-width: 1200px) {
+  .home{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.7rem;
+    height: 400px;
+  }
+  .home h1{
+    font-weight: 700;
+    margin-right: 2%;
+  }
+}
 .home h1{
   font-weight: 800;
 }

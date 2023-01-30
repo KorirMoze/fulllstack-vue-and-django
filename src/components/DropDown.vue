@@ -1,6 +1,7 @@
 <template>
     <div class="datab">
       <form v-on:submit.prevent="submitForm">
+        {% csrf_token %}
         <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
         <div class="friend-no" id="user-no">
             <input class="phone-no" placeholder="Enter Your Phone Number">
@@ -32,7 +33,7 @@
             <input class="phone-no" placeholder="Enter Friends Phone Number"
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
-        <button type="submit">Add Task</button>
+        <button type="submit" @click="submitForm">Add Task</button>
         </form>
     </div>
      selected {{ selected2 }}
@@ -99,22 +100,15 @@ export default {
         });
     },
     async submitForm() {
-      try {
+      const data = {
+        selected2: this.selected2,
+        selected3: this.selected3,
+      };
         // Send a POST request to the API
-        const response = await this.$http.post('http://localhost:8000/api/v1/credits/', {
-          title: this.selected2,
-          description: this.selected3,
-          completed: false,
-        });
-        // Append the returned data to the tasks array
-        this.tasks.push(response.data);
-        // Reset the title and description field values.
-        this.selected2 = '';
-        this.selected3 = '';
-      } catch (error) {
-        // Log the error
-        console.log(error);
-      }
+      const response = await this.axios.post('http://localhost:8000/api/v1/credits/', data).data;
+      // Append the returned data to the tasks array
+      // Log the error
+      console.log(response);
     },
   },
 };
