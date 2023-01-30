@@ -108,11 +108,13 @@ export default {
     },
     async postData() {
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/v1/credits/', {
+        const data = {
           phone: this.phone,
           selected3: this.selected3,
           selected2: this.selected2,
-        });
+        };
+        console.log(data);
+        const response = await axios.post('http://127.0.0.1:8000/api/v1/credits/', data);
         console.log(response.data);
         this.submitted = true;
       } catch (error) {
@@ -120,7 +122,7 @@ export default {
       }
     },
     postData1() {
-      axios.post('http://127.0.0.1:8000/api/v1/credits/', {
+      axios.post('http://127.0.0.1:8000/api/v1/credit_create/', {
         selected3: this.selected3,
         selected2: this.selected2,
       })
