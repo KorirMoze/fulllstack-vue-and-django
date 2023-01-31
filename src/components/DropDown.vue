@@ -19,12 +19,12 @@
              class="sele">
                 <option disabled value="" class="selections">Available Data Deals options</option>
                 <option class="selections" v-for="dat in Datas"
-                :key="dat.id">{{dat.bundle}} for Shs.{{dat.price }}bob</option>
+                :key="dat.id"> Shs.{{dat.price }} for {{dat.bundle}}</option>
             </select>
             <select v-model="selected3" class="sele">
             <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
             <option class="selections" v-for="credo in Airtimes"
-            :key="credo.id">{{credo.cred}}</option>
+            :key="credo.id"> Shs.{{credo.price}} for {{credo.cred}}</option>
             </select>
             </label>
         </div>
@@ -33,11 +33,12 @@
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
         <div class="friend-no">
-        <button class="btn1" @click="postData">Post Data</button>
+        <button class="btn1" @click="postData">Submit for processing</button>
       </div>
         </form>
         <div class="subm" v-if="submitted">
-          <h3>You have purchased {{selected2}} {{selected3}}</h3>
+          <h3>You have purchased {{selected2}} {{selected3}}.
+            Please input Mpesa pin when promted</h3>
         </div>
     </div>
 </template>
@@ -228,5 +229,6 @@ export default {
   .btn1:hover {
     background: transparent;
     text-decoration: none;
+    color: black;
   }
 </style>
