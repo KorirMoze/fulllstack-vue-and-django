@@ -1,11 +1,9 @@
 <template>
-    <div class="datab">
+    <div class="datab" id="contact-me">
       <form v-on:submit.prevent="submitForm">
         <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
-        phonen {{ phone }}
         <div class="friend-no" id="user-no" >
             <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
-            <button @click="postData">Post Data</button>
         </div>
         <div class="card1">
             <label for="first-checkbox">
@@ -34,23 +32,14 @@
             <input class="phone-no" placeholder="Enter Friends Phone Number"
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
         </div>
-        <button type="submit" @click="post">Add Task</button>
-        <button @click="postData1">Post</button>
+        <div class="friend-no">
+        <button class="btn1" @click="postData">Post Data</button>
+      </div>
         </form>
-        <div v-if="submitted">
-          <h3>You have purchased</h3>
+        <div class="subm" v-if="submitted">
+          <h3>You have purchased {{selected2}} {{selected3}}</h3>
         </div>
     </div>
-     <!-- selected {{ selected2 }} -->
-     selected {{ selected2 }}
-    <!-- <div class="person">
-        <h1>Right here</h1>
-        <div class="column is-3" v-for="credo in Airtimes"
-        :key="credo.id">
-        <h3>{{credo.cred}}</h3>
-    </div>
-
-    </div> -->
 </template>
 <script>
 import axios from 'axios';
@@ -133,6 +122,10 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    scroll() {
+      const element = document.getElementById('contact-me');
+      element.scrollIntoView({ behavior: 'smooth' });
     },
   },
 };
@@ -220,5 +213,20 @@ export default {
   }
   .person {
     margin-top: 20px;
+  }
+  .btn1 {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: Courier New;
+    color: #ffffff;
+    font-size: 20px;
+    background: #3498db;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  .btn1:hover {
+    background: transparent;
+    text-decoration: none;
   }
 </style>

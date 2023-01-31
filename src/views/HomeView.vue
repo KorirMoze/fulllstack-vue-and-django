@@ -4,7 +4,7 @@
     <h1 class="data">Buy Data bundles at Discounts</h1>
     <h1>Top-Up Airtime at 100% Discount</h1>
     <span>
-    <button class="btn">Data Bundles Deal</button>
+    <button class="btn" @click="scroll">Data Bundles Deal</button>
     <button class="btn">Buy Cheap Airtime</button>
   </span>
   </div>
@@ -39,7 +39,14 @@
 <div class="drop">
   <DropDown />
 </div>
-
+<div>
+  <div id="app">
+    <div id="contact-me">
+      contact me box
+    </div>
+  </div>
+</div>
+<div id="contact-me">qgaHJKFRGDASBJHmkL</div>
 </template>
 
 <script>
@@ -62,6 +69,14 @@ export default {
         link: '#',
       },
       ],
+      methods: {
+        scrollMeTo(id) {
+          const element = document.getElementById(id);
+          // Calculate position to scroll to
+          const y = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        },
+      },
     };
   },
 };
