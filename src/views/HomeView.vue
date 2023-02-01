@@ -51,6 +51,7 @@
                 v-bind:value="giftAFriend">Gift a Friend</div>
           </div>
         </div>
+        <DropDown />
       </div>
     <section>
       <span>value: {{color}}</span>
@@ -94,7 +95,6 @@
   </div>
 </div> -->
 <div class="drop">
-  <DropDown />
 </div>
 <div>
   <div id="app">
@@ -296,5 +296,8 @@ export default {
   margin: auto;
   align-items: center;
   width: 80%;
+}
+.card-footer-item {
+  padding: 28px 0;
 }
 </style>
