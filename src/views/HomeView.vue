@@ -1,13 +1,53 @@
 <template>
   <div class="home">
-    <h1>Buy Data Bundles And Airtime Instantly</h1>
-    <h1 class="data">Buy Data bundles at Discounts</h1>
-    <h1>Top-Up Airtime at 100% Discount</h1>
+    <div class="homee">
+    <h1>Buy Bundles and Recharge Online</h1>
+    <h2 class="data">Buy Data bundles at Discounts</h2>
+    <h2>Purchase bundles and airtime via credit/cheque card,M-pesa And Airtell Money.</h2>
     <span>
-    <button class="btn" @click="scroll">Scroll Down for Offers</button>
+    <!-- <button class="btn" @click="scroll">Scroll Down for Offers</button> -->
   </span>
+</div>
   </div>
-  <div class="group Box text-center about skew" id="about">
+  <div class="choice">
+    <div class="voice">
+  <div class="card">
+    <footer class="card-footer">
+      <a href="#" class="card-footer-item">Data-Bundles</a>
+      <a href="#" class="card-footer-item">Airtime</a>
+      <a href="#" class="card-footer-item">All in One</a>
+    </footer>
+  </div>
+  <div>
+    <div><h4>Select Data bundle Type</h4></div>
+    <label for="first-checkbox">
+      <div class="columns is-mobile">
+        <div class="column is-one-fifth-desktop"><input type="radio" v-model="color" value="0">
+          Buy Once</div>
+        <div class="column is-one-fifth-desktop"><input type="radio" v-model="color" value="1">
+          Auto Renew</div>
+      </div>
+      <div><h4>Validity</h4></div>
+      <div class="columns is-mobile">
+        <div class="column is-one-fifth-desktop"><input type="radio" v-model="gender"
+          v-bind:value="a">Buy for Self </div>
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="gender"
+            v-bind:value="b">Gift a Friend</div>
+      </div>
+    <section>
+      <span>value: {{color}}</span>
+    </section>
+
+    <section>
+      <h3>binding value</h3>
+      <br />
+      <span>value: {{gender}}</span>
+    </section>
+  </label>
+  </div>
+</div>
+</div>
+  <!-- <div class="group Box text-center about skew" id="about">
       <div class="wrapper">
         <h2>Welcome to GlowNet Solutions</h2>
         <p>Glownet Offers the best Data Bundles acroos all the three networks Safaricom, Aitel And
@@ -21,8 +61,8 @@
       Take a look at our offers
       </p>
     </div>
-</div>
-<div class="why">
+</div> -->
+<!-- <div class="why">
   <h2>Why Choose Glownet</h2>
   <div class="columns is-mobile">
     <div class="column">Fast - It takes seconds</div>
@@ -34,7 +74,7 @@
     <div class="column">Zero Transaction Fees</div>
     <div class="column">Cheapest Airtime & Data in Kenya</div>
   </div>
-</div>
+</div> -->
 <div class="drop">
   <DropDown />
 </div>
@@ -55,6 +95,10 @@ export default {
   },
   data() {
     return {
+      color: '',
+      gender: '',
+      a: 'man',
+      b: 'woman',
       services: [{
         title: 'web',
         link: '#',
@@ -79,30 +123,46 @@ export default {
 <style>
 .home{
   background-color: #277BC0;
-  display: flex;
-  align-items: center!important;
-  justify-content: center;
-  height: 500px;
-  flex-direction: column;
   width: 100%;
-  font-size: 2rem;
   color:white;
+}
+.homee{
+  width: 80%;
+  text-align: left;
+  margin: auto;
+
 }
 @media screen  and (max-width: 1200px) {
   .home{
-    display: flex;
+    display: block;
     justify-content: center;
     text-align: center;
     font-size: 1.7rem;
-    height: 400px;
+    padding: 40px 6% 80px;
   }
   .home h1{
-    font-weight: 700;
-    margin-right: 2%;
+    font-weight: 500;
   }
 }
-.home h1{
-  font-weight: 800;
+.homee h1{
+  font-weight: 500;
+  font-family: 'intervogue-bold';
+  margin-bottom: 6px;
+  font-size: 36px;
+  line-height: 1.1;
+}
+.home h2 {
+    font-family: 'intervogue-reg';
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    padding: 2px 10px 2px 0;
+    width: auto;
+    margin: 0;
+    margin-top: 6px;
+    text-align: left;
+    text-transform: none;
+    line-height: 24px;
 }
 .data {
   color: #ff7f00;
@@ -184,7 +244,7 @@ export default {
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
-  z-index: 4;
+  z-index: 1;
 }
 .data-bundles{
   background: #0e375a;
@@ -197,5 +257,18 @@ export default {
 }
 #but {
   width: 180%;
+}
+.choice {
+  position: relative;
+  background-color: #fff;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: -40px;
+  padding: 40px;
+  z-index: 2;
+}
+.section3{
+  background-color: #ececec;
 }
 </style>
