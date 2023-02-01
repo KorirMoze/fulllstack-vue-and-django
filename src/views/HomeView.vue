@@ -18,21 +18,29 @@
       <a href="#" class="card-footer-item">All in One</a>
     </footer>
   </div>
-  <div>
+  <div class="togglers">
     <div><h4>Select Data bundle Type</h4></div>
     <label for="first-checkbox">
-      <div class="columns is-mobile">
-        <div class="column is-one-fifth-desktop"><input type="radio" v-model="color" value="0">
-          Buy Once</div>
-        <div class="column is-one-fifth-desktop"><input type="radio" v-model="color" value="1">
-          Auto Renew</div>
-      </div>
-      <div><h4>Validity</h4></div>
-      <div class="columns is-mobile">
-        <div class="column is-one-fifth-desktop"><input type="radio" v-model="gender"
-          v-bind:value="a">Buy for Self </div>
-          <div class="column is-one-fifth-desktop"><input type="radio" v-model="gender"
-            v-bind:value="b">Gift a Friend</div>
+      <div>
+        <div class="columns is-mobile">
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+            value="autoRenew">
+            Buy Once</div>
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+            value="autoRenew">
+            Auto Renew</div>
+        </div>
+
+        <div v-if="selectedOption === 'autoRenew'">
+          <h4>Validity</h4>
+          <div class="columns is-mobile">
+            <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValidity"
+              v-bind:value="buyForSelf">Buy for Self </div>
+              <div class="column is-one-fifth-desktop"><input type="radio"
+                v-model="selectedValidity"
+                v-bind:value="giftAFriend">Gift a Friend</div>
+          </div>
+        </div>
       </div>
     <section>
       <span>value: {{color}}</span>
@@ -99,6 +107,8 @@ export default {
       gender: '',
       a: 'man',
       b: 'woman',
+      selectedOption: null,
+      selectedValidity: null,
       services: [{
         title: 'web',
         link: '#',
@@ -270,5 +280,10 @@ export default {
 }
 .section3{
   background-color: #ececec;
+}
+.togglers{
+  margin: auto;
+  align-items: center;
+  width: 80%;
 }
 </style>

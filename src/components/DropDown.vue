@@ -1,7 +1,7 @@
 <template>
     <div class="datab" id="contact-me">
       <form v-on:submit.prevent="submitForm">
-        <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1>
+        <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
         <div class="friend-no" id="user-no" >
             <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
         </div>
