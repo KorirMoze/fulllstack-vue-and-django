@@ -24,7 +24,7 @@
       <div>
         <div class="columns is-mobile">
           <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
-            value="autoRenew">
+            value="Buy Once">
             Buy Once</div>
           <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
             value="autoRenew">
@@ -32,6 +32,16 @@
         </div>
 
         <div v-if="selectedOption === 'autoRenew'">
+          <h4>Validity</h4>
+          <div class="columns is-mobile">
+            <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValidity"
+              v-bind:value="buyForSelf">Buy for Own Number </div>
+              <div class="column is-one-fifth-desktop"><input type="radio"
+                v-model="selectedValidity"
+                v-bind:value="giftAFriend">Gift a Friend</div>
+          </div>
+        </div>
+        <div v-if="selectedOption === 'Buy Once'">
           <h4>Validity</h4>
           <div class="columns is-mobile">
             <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValidity"
@@ -140,7 +150,8 @@ export default {
   width: 80%;
   text-align: left;
   margin: auto;
-
+  padding-bottom: 4rem;
+  padding-top: 2rem;
 }
 @media screen  and (max-width: 1200px) {
   .home{
