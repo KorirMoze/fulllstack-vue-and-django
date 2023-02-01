@@ -7,7 +7,7 @@
     <router-section2/>
   </section>
   <footer class="footer">
-    <p class="has-text-centered">Copyright (c) 2022</p>
+    <p class="has-text-centered">Copyright (@) 2022</p>
   </footer>
 </template>
 <script>
