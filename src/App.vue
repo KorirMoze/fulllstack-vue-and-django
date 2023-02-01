@@ -6,16 +6,18 @@
   <section class="section2">
     <router-section2/>
   </section>
-  <footer class="footer">
-    <p class="has-text-centered">Copyright (@) 2022</p>
-  </footer>
+  <section class="footer">
+    <FooterCompo />
+  </section>
 </template>
 <script>
 import navBar from './components/navBar.vue';
+import FooterCompo from './components/FooterCompo.vue';
 
 export default {
   components: {
     navBar,
+    FooterCompo,
   },
   data() {
     return {
