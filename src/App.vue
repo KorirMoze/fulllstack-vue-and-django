@@ -1,12 +1,12 @@
 <template>
   <navBar />
-  <section class="section">
+  <section class="section3">
     <router-view/>
   </section>
   <section class="section2">
     <router-section2/>
   </section>
-  <section class="footer">
+  <section class="footr">
     <FooterCompo />
   </section>
 </template>
@@ -28,7 +28,5 @@ export default {
 </script>
 <style lang="scss">
 @import '../node_modules/bulma';
-.section {
-  padding: 0 0;
-}
+
 </style>

@@ -186,15 +186,6 @@ export default {
   font-weight: 500;
   z-index: 4;
 }
-.columns{
-  color: wheat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 1rem;
-  opacity: 5;
-  font-weight: 800;
-}
 .data-bundles{
   background: #0e375a;
   color: white;
