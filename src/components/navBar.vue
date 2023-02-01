@@ -17,15 +17,16 @@
         </a>
 
       </div>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+      <button class="navbar-burger" @click="toggleNavbar"
+      aria-label="menu" aria-expanded="false"
       data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-      </a>
+      </button>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': isActive }">
 
       <div class="navbar-end">
         <a class="navbar-item">
@@ -69,19 +70,15 @@
 </template>
 <script>
 export default {
-  name: 'navbarC',
   data() {
     return {
-      services: [{
-        title: 'web',
-        link: '#',
-      },
-      {
-        title: 'Design',
-        link: '#',
-      },
-      ],
+      isActive: false,
     };
+  },
+  methods: {
+    toggleNavbar() {
+      this.isActive = !this.isActive;
+    },
   },
 };
 </script>
