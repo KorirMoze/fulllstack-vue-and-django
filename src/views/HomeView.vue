@@ -13,7 +13,7 @@
     <div class="voice">
       <div class="columns is-mobile">
         <div class="column">
-          <div class="card">
+          <div class="card" @click="toggleActive" @keyup.enter="toggleActive">
             <footer class="card-footer">
               <a href="#" class="card-footer-item card-radius">Data-Bundles</a>
             </footer>
@@ -33,6 +33,9 @@
             </footer>
           </div>
         </div>
+          </div>
+          <div v-if="isActive">
+            <button class="button is-primary">Activate</button>
           </div>
   <div class="togglers">
     <div><h4>Select Data bundle Type</h4></div>
@@ -133,6 +136,7 @@ export default {
       gender: '',
       a: 'man',
       b: 'woman',
+      isActive: false,
       selectedOption: null,
       selectedValidity: null,
       services: [{
@@ -144,15 +148,18 @@ export default {
         link: '#',
       },
       ],
-      methods: {
-        scrollMeTo(id) {
-          const element = document.getElementById(id);
-          // Calculate position to scroll to
-          const y = element.getBoundingClientRect().top + window.pageYOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        },
-      },
     };
+  },
+  methods: {
+    // scrollMeTo(id) {
+    //   const element = document.getElementById(id);
+    //   // Calculate position to scroll to
+    //   const y = element.getBoundingClientRect().top + window.pageYOffset;
+    //   window.scrollTo({ top: y, behavior: 'smooth' });
+    // },
+    toggleActive() {
+      this.isActive = !this.isActive;
+    },
   },
 };
 </script>
