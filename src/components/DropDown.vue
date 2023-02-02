@@ -1,32 +1,33 @@
 <template>
       <form v-on:submit.prevent="submitForm">
         <label for="first-checkbox">
-          <!-- Selected: {{ selected }} -->
-          <!-- <select v-model="selectedValue" class="sele">
-            <option disabled value="" class="selections">Buy Amazing Data Bundles Deal</option>
-            <option class="selections" v-for="option in options" :value="option.value"
-            :key="option">
-                {{ option.text }}
-            </option> -->
-          <!-- </select> -->
+          <div class="sele1">
           <select v-model="selected2"
            class="sele">
-              <option disabled value="" class="selections">Available Data Deals options</option>
+              <option disabled value="" id="sele1" class="selections">
+                Available Data Deals options</option>
               <option class="selections" v-for="dat in Datas"
               :key="dat.id"> Shs.{{dat.price }} for {{dat.bundle}}</option>
           </select>
+        </div>
           <select v-model="selected3" class="sele">
           <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
           <option class="selections" v-for="credo in Airtimes"
           :key="credo.id"> Shs.{{credo.price}} for {{credo.cred}}</option>
           </select>
           </label>
-        <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
-        <div class="friend-no" id="user-no" >
+          <div class="chekcbox">
+          <label  for="first-checkbox" class="checkbox">
+            <input type="checkbox">
+            Remember me
+          </label>
+          <div class="friend" id="user-no" >
             <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
         </div>
-        <div class="card1">
         </div>
+        <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
+        <!-- <div class="card1">
+        </div> -->
         <div class="friend-no">
             <input class="phone-no" placeholder="Enter Friends Phone Number"
             v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
@@ -102,7 +103,7 @@ export default {
           selected2: this.selected2,
         };
         console.log(data);
-        const response = axios.post('http://170.187.181.141/api/v1/credits/', data);
+        const response = axios.post('http://127.0.0.1:8000/api/v1/credits/', data);
         console.log(response.data);
         this.submitted = true;
       } catch (error) {
@@ -110,7 +111,7 @@ export default {
       }
     },
     postData1() {
-      axios.post('http://170.187.181.141/api/v1/credit_create/', {
+      axios.post('http://127.0.0.1:8000/credit_create/', {
         selected3: this.selected3,
         selected2: this.selected2,
       })
@@ -162,6 +163,7 @@ export default {
 .sele{
     width: 50%;
     height: 7vh;
+    display: flex;
     justify-content: left;
     align-items: left;
     text-align: center;
@@ -170,6 +172,9 @@ export default {
     border: 1px solid #d6d6d6;
     padding: 0 15px;
     border-radius: 10px;
+}
+.sele1 {
+  margin-bottom: 1rem!important;
 }
 .selections{
     background-color: #8DCBE6;
@@ -189,15 +194,7 @@ export default {
     box-shadow: 1px 2px 3px 4px rgba(24, 24, 24, 0.4);
     z-index: 10;
 }
-.friend-no {
-    display:flex;
-    justify-content: center;
-    padding: 2rem 0;
-    background-color: white;
-    margin-top: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 1px 2px 3px 4px rgba(24, 24, 24, 0.4);
-}
+
 .phone-no {
     width: 30%;
     height: 4vh;
@@ -232,4 +229,36 @@ export default {
     text-decoration: none;
     color: black;
   }
+  .checkbox {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 20px 0 20px 35px !important;
+    border: 1px solid #eee;
+    width: 50%;
+    border-radius: 10px;
+  }
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.friend {
+  width: 100%;
+  border-radius: 10px;
+}
+.phone-no{
+  padding: 20px 0 20px 35px !important;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+}
 </style>
