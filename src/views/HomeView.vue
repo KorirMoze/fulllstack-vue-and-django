@@ -11,13 +11,29 @@
   </div>
   <div class="choice">
     <div class="voice">
-  <div class="card">
-    <footer class="card-footer">
-      <a href="#" class="card-footer-item">Data-Bundles</a>
-      <a href="#" class="card-footer-item">Airtime</a>
-      <a href="#" class="card-footer-item">All in One</a>
-    </footer>
-  </div>
+      <div class="columns is-mobile">
+        <div class="column">
+          <div class="card">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item card-radius">Data-Bundles</a>
+            </footer>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item">Airtime</a>
+            </footer>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item">All in One</a>
+            </footer>
+          </div>
+        </div>
+          </div>
   <div class="togglers">
     <div><h4>Select Data bundle Type</h4></div>
     <label for="first-checkbox">

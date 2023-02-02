@@ -1,32 +1,31 @@
 <template>
-    <div class="datab" id="contact-me">
       <form v-on:submit.prevent="submitForm">
+        <label for="first-checkbox">
+          <!-- Selected: {{ selected }} -->
+          <!-- <select v-model="selectedValue" class="sele">
+            <option disabled value="" class="selections">Buy Amazing Data Bundles Deal</option>
+            <option class="selections" v-for="option in options" :value="option.value"
+            :key="option">
+                {{ option.text }}
+            </option> -->
+          <!-- </select> -->
+          <select v-model="selected2"
+           class="sele">
+              <option disabled value="" class="selections">Available Data Deals options</option>
+              <option class="selections" v-for="dat in Datas"
+              :key="dat.id"> Shs.{{dat.price }} for {{dat.bundle}}</option>
+          </select>
+          <select v-model="selected3" class="sele">
+          <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
+          <option class="selections" v-for="credo in Airtimes"
+          :key="credo.id"> Shs.{{credo.price}} for {{credo.cred}}</option>
+          </select>
+          </label>
         <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
         <div class="friend-no" id="user-no" >
             <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
         </div>
         <div class="card1">
-            <label for="first-checkbox">
-            <!-- Selected: {{ selected }} -->
-            <select v-model="selectedValue" class="sele">
-              <option disabled value="" class="selections">Buy Amazing Data Bundles Deal</option>
-              <option class="selections" v-for="option in options" :value="option.value"
-              :key="option">
-                  {{ option.text }}
-              </option>
-            </select>
-            <select v-model="selected2"
-             class="sele">
-                <option disabled value="" class="selections">Available Data Deals options</option>
-                <option class="selections" v-for="dat in Datas"
-                :key="dat.id"> Shs.{{dat.price }} for {{dat.bundle}}</option>
-            </select>
-            <select v-model="selected3" class="sele">
-            <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
-            <option class="selections" v-for="credo in Airtimes"
-            :key="credo.id"> Shs.{{credo.price}} for {{credo.cred}}</option>
-            </select>
-            </label>
         </div>
         <div class="friend-no">
             <input class="phone-no" placeholder="Enter Friends Phone Number"
@@ -40,7 +39,6 @@
           <h3>You have purchased {{selected2}} {{selected3}}.
             Please input Mpesa pin when promted</h3>
         </div>
-    </div>
 </template>
 <script>
 import axios from 'axios';
@@ -162,21 +160,24 @@ export default {
   }
 }
 .sele{
-    width: 100%;
+    width: 50%;
     height: 7vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px;
-    margin: auto;
+    justify-content: left;
+    align-items: left;
     text-align: center;
-    z-index: 99;
+    z-index: 2;
     font-size: 1.3rem;
+    border: 1px solid #d6d6d6;
+    padding: 0 15px;
+    border-radius: 10px;
 }
 .selections{
     background-color: #8DCBE6;
     height: 5vh;
     text-align: left;
+    border: 1px solid #d6d6d6!important;
+    padding: 0 15px;
+    border-radius: 10px;
 }
 .selection:hover {
     background-color: red;
