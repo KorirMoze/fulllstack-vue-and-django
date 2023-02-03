@@ -1,41 +1,115 @@
 <template>
-      <form v-on:submit.prevent="submitForm">
-        <label for="first-checkbox">
-          <div class="sele1">
-          <select v-model="selected2"
-           class="sele">
-              <option disabled value="" id="sele1" class="selections">
-                Available Data Deals options</option>
-              <option class="selections" v-for="dat in Datas"
-              :key="dat.id"> Shs.{{dat.price }} for {{dat.bundle}}</option>
-          </select>
+  <div class="choice">
+    <div class="voice">
+      <div class="columns is-mobile">
+        <div class="column">
+          <div class="card" @click="toggleActive" @keyup.enter="toggleActive">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item card-radius">Data-Bundles</a>
+            </footer>
+          </div>
         </div>
-          <select v-model="selected3" class="sele">
-          <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
-          <option class="selections" v-for="credo in Airtimes"
-          :key="credo.id"> Shs.{{credo.price}} for {{credo.cred}}</option>
-          </select>
-          </label>
-          <div class="chekcbox">
-          <label  for="first-checkbox" class="checkbox">
-            <input type="checkbox">
-            Remember me
-          </label>
-          <div class="friend" id="user-no" >
-            <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
+        <div class="column">
+          <div class="card">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item">Airtime</a>
+            </footer>
+          </div>
         </div>
+        <div class="column">
+          <div class="card">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item">All in One</a>
+            </footer>
+          </div>
         </div>
-        <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
-        <!-- <div class="card1">
-        </div> -->
-        <div class="friend-no">
-            <input class="phone-no" placeholder="Enter Friends Phone Number"
-            v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
-        </div>
-        <div class="friend-no">
-        <button class="btn1" @click="postData">Submit for processing</button>
       </div>
-        </form>
+          <!-- <div v-if="isActive">
+            <button class="button is-primary">Activate</button>
+          </div> -->
+    <div class="togglers">
+    <div><h4>Select Data bundle Type</h4></div>
+    <label for="first-checkbox">
+      <div>
+        <div class="columns is-mobile">
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+            value="Buy Once">
+            Buy Once</div>
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+            value="autoRenew">
+            Auto Renew</div>
+        </div>
+
+        <div v-if="selectedOption === 'autoRenew'">
+          <h4>Validity</h4>
+          <div class="columns is-mobile">
+            <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValidity"
+              v-bind:value="buyForSelf">Buy for Own Number </div>
+              <div class="column is-one-fifth-desktop"><input type="radio"
+                v-model="selectedValidity"
+                v-bind:value="giftAFriend">Gift a Friend</div>
+          </div>
+        </div>
+        <div v-if="selectedOption === 'Buy Once'">
+          <h4>Validity</h4>
+          <div class="columns is-mobile">
+            <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValidity"
+              v-bind:value="buyForSelf">Buy for Self </div>
+              <div class="column is-one-fifth-desktop"><input type="radio"
+                v-model="selectedValidity"
+                v-bind:value="giftAFriend">Gift a Friend</div>
+          </div>
+        </div>
+      </div>
+    <section>
+      <span>value: {{color}}</span>
+    </section>
+    <form v-on:submit.prevent="submitForm">
+      <label for="first-checkbox">
+        <div class="sele1">
+        <select v-model="selected2"
+         class="sele"  v-if="isActive">
+            <option disabled value="" id="sele1" class="selections">
+              Available Data Deals options</option>
+            <option class="selections" v-for="dat in Datas"
+            :key="dat.id"> Shs.{{dat.price }} for {{dat.bundle}}</option>
+        </select>
+      </div>
+        <select v-model="selected3" class="sele">
+        <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
+        <option class="selections" v-for="credo in Airtimes"
+        :key="credo.id"> Shs.{{credo.price}} for {{credo.cred}}</option>
+        </select>
+        </label>
+        <div class="chekcbox">
+        <label  for="first-checkbox" class="checkbox">
+          <input type="checkbox">
+          Remember me
+        </label>
+        <div class="friend" id="user-no" >
+          <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
+      </div>
+      </div>
+      <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
+      <!-- <div class="card1">
+      </div> -->
+      <div class="friend-no">
+          <input class="phone-no" placeholder="Enter Friends Phone Number"
+          v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
+      </div>
+      <div class="friend-no">
+      <button class="btn1" @click="postData">Submit for processing</button>
+    </div>
+      </form>
+    <section>
+      <h3>binding value</h3>
+      <br />
+      <span>value: {{gender}}</span>
+    </section>
+  </label>
+  </div>
+</div>
+</div>
         <div class="subm" v-if="submitted">
           <h3>You have purchased {{selected2}} {{selected3}}.
             Please input Mpesa pin when promted</h3>
