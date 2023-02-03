@@ -5,7 +5,7 @@
         <div class="column">
           <div class="card" @click="toggleActive" @keyup.enter="toggleActive">
             <footer class="card-footer">
-              <a href="#" class="card-footer-item card-radius">Data-Bundles</a>
+              <a href="#" class="card-footer-item card-radius">Bundles</a>
             </footer>
           </div>
         </div>
@@ -236,24 +236,6 @@ export default {
     font-size: 2rem;
     text-align: center;
 }
-@media screen and (max-width: 1200px){
-  .datab {
-    width: 100%;
-    display: flex;
-    padding: 1rem 1rem;
-  }
-  .sele {
-    text-align: center;
-  }
-  .datab h1 {
-    font-size: 1.6rem;
-    text-align: left;
-  }
-  .phone-no {
-    width: 60%!important;
-    margin-bottom: 1.5rem;
-  }
-}
 .sele{
     width: 50%;
     height: 7vh;
@@ -327,7 +309,7 @@ export default {
   .checkbox {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 20px 0 20px 35px !important;
+    padding: 20px 0 20px 25px;
     border: 1px solid #eee;
     width: 50%;
     border-radius: 10px;
@@ -355,5 +337,48 @@ export default {
   padding: 20px 0 20px 35px !important;
   border: 1px solid #cccccc;
   border-radius: 10px;
+}
+@media screen and (max-width: 1200px){
+  .datab {
+    width: 100%;
+    display: flex;
+    padding: 1rem 1rem;
+  }
+  .sele {
+    text-align: center;
+  }
+  .datab h1 {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+  .phone-no {
+    width: 100%!important;
+    margin-bottom: 1.5rem;
+  }
+  .card {
+    font-size: 0.9;
+    width: 100%;
+  }
+  .card-footer-item{
+    display: block;
+    text-align: center;
+  }
+  .column{
+    padding: 0;
+    margin-right: 1rem;
+  }
+  .togglers h4 {
+    padding-bottom: 1rem;
+  }
+  .togglers{
+    width: 100%;
+  }
+  .checkbox {
+    padding: 10px 0 10px 15px !important;
+    width: 100%;
+  }
+  .btn1 {
+    padding: 0;
+  }
 }
 </style>
