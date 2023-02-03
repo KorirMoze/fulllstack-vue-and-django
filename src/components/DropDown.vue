@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="column">
-          <div class="card">
+          <div class="card" @click="toggle1Active" @keyup.enter="toggleActive">
             <footer class="card-footer">
               <a href="#" class="card-footer-item">Airtime</a>
             </footer>
@@ -69,14 +69,15 @@
         <div class="sele1">
         <select v-model="selected2"
          class="sele"  v-if="isActive">
-            <option disabled value="" id="sele1" class="selections">
+            <option  value="" id="sele1" class="selections">
               Available Data Deals options</option>
             <option class="selections" v-for="dat in Datas"
             :key="dat.id"> Shs.{{dat.price }} for {{dat.bundle}}</option>
         </select>
       </div>
-        <select v-model="selected3" class="sele">
-        <option disabled value="" class="selections" >Buy Airtime And Get a bonus</option>
+        <select v-model="selected3" class="sele"
+        v-if="isClicked">
+        <option value="" class="selections"  >Buy Airtime And Get a bonus</option>
         <option class="selections" v-for="credo in Airtimes"
         :key="credo.id"> Shs.{{credo.price}} for {{credo.cred}}</option>
         </select>
@@ -89,6 +90,14 @@
         <div class="friend" id="user-no" >
           <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
       </div>
+        <div>
+    <!-- <select v-model="selectedOption">
+      <option value="">Please select an option</option>
+      <option v-for="option in options" :key="option.value" :value="option.value">
+        {{ option.text }}
+      </option>
+    </select> -->
+  </div>
       </div>
       <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
       <!-- <div class="card1">
@@ -101,11 +110,11 @@
       <button class="btn1" @click="postData">Submit for processing</button>
     </div>
       </form>
-    <section>
+    <!-- <section>
       <h3>binding value</h3>
       <br />
       <span>value: {{gender}}</span>
-    </section>
+    </section> -->
   </label>
   </div>
 </div>
@@ -132,6 +141,10 @@ export default {
       selected3: '',
       selectedValue: '',
       secondSelectedValue: '',
+      isActive: false,
+      isClicked: false,
+      selectedOption: null,
+      selectedValidity: null,
       phone: '',
       options: [
         { text: 'Buy Data deals for Self', value: 'disable' },
@@ -201,6 +214,12 @@ export default {
       const element = document.getElementById('contact-me');
       element.scrollIntoView({ behavior: 'smooth' });
     },
+    toggleActive() {
+      this.isActive = !this.isActive;
+    },
+    toggle1Active() {
+      this.isClicked = !this.isClicked;
+    },
   },
 };
 </script>
@@ -232,6 +251,7 @@ export default {
   }
   .phone-no {
     width: 60%!important;
+    margin-bottom: 1.5rem;
   }
 }
 .sele{
@@ -297,6 +317,7 @@ export default {
     background: #3498db;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
+    margin: 1rem 0;
   }
   .btn1:hover {
     background: transparent;
