@@ -31,39 +31,23 @@
     <div><h4>Select Data bundle Type</h4></div>
     <label for="first-checkbox">
       <div>
+        <div class="checks">
+        <div class="columns is-mobile">
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+            value="self">
+            Buy For self</div>
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+            value="friend">Gift a Friend</div>
+        </div>
         <div class="columns is-mobile">
           <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
             value="Buy Once">
             Buy Once</div>
           <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
-            value="autoRenew">
-            Auto Renew</div>
-        </div>
-
-        <div v-if="selectedOption === 'autoRenew'">
-          <h4>Validity</h4>
-          <div class="columns is-mobile">
-            <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValidity"
-              v-bind:value="buyForSelf">Buy for Own Number </div>
-              <div class="column is-one-fifth-desktop"><input type="radio"
-                v-model="selectedValidity"
-                v-bind:value="giftAFriend">Gift a Friend</div>
-          </div>
-        </div>
-        <div v-if="selectedOption === 'Buy Once'">
-          <h4>Validity</h4>
-          <div class="columns is-mobile">
-            <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValidity"
-              v-bind:value="buyForSelf">Buy for Self </div>
-              <div class="column is-one-fifth-desktop"><input type="radio"
-                v-model="selectedValidity"
-                v-bind:value="giftAFriend">Gift a Friend</div>
-          </div>
+            value="autoRenew">Auto Renew</div>
         </div>
       </div>
-    <section>
-      <span>value: {{color}}</span>
-    </section>
+      </div>
     <form v-on:submit.prevent="submitForm">
       <label for="first-checkbox">
         <div class="sele1">
@@ -83,10 +67,6 @@
         </select>
         </label>
         <div class="chekcbox">
-        <label  for="first-checkbox" class="checkbox">
-          <input type="checkbox">
-          Remember me
-        </label>
         <div class="friend" id="user-no" >
           <input v-model="phone" class="phone-no" placeholder="Enter Your Phone Number">
       </div>
@@ -102,12 +82,16 @@
       <!-- <h1>The Cheapest Safaricom Airtime & Data Bundles in Kenya</h1> -->
       <!-- <div class="card1">
       </div> -->
-      <div class="friend-no">
+      <div class="friend-no" v-if="selectedOption === 'friend'">
           <input class="phone-no" placeholder="Enter Friends Phone Number"
           v-model="secondSelectedValue" :disabled="selectedValue === 'disable'">
       </div>
+      <label  for="first-checkbox" class="checkbox">
+        <input type="checkbox">
+        Confirm Purchase
+      </label>
       <div class="friend-no">
-      <button class="btn1" @click="postData">Submit for processing</button>
+      <button class="btn1" @click="postData">Purchase</button>
     </div>
       </form>
     <!-- <section>
@@ -251,6 +235,7 @@ export default {
 }
 .sele1 {
   margin-bottom: 1rem!important;
+  margin-top: 1rem;
 }
 .selections{
     background-color: #8DCBE6;
@@ -366,6 +351,7 @@ export default {
   .column{
     padding: 0;
     margin-right: 1rem;
+    padding-bottom: 1rem;
   }
   .togglers h4 {
     padding-bottom: 1rem;
@@ -378,7 +364,11 @@ export default {
     width: 100%;
   }
   .btn1 {
-    padding: 0;
+    width: 100%;
+  }
+  .sele {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
 </style>
