@@ -40,10 +40,10 @@
             value="friend">Gift a Friend</div>
         </div>
         <div class="columns is-mobile">
-          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+      <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValue"
             value="Buy Once">
             Buy Once</div>
-          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedOption"
+          <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValue"
             value="autoRenew">Auto Renew</div>
         </div>
       </div>
