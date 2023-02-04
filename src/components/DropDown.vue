@@ -371,4 +371,8 @@ export default {
     margin-bottom: 1rem;
   }
 }
+.sele {
+  width: 100%;
+  margin-bottom: 1rem;
+}
 </style>

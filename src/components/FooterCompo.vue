@@ -4,7 +4,7 @@
             <div class="column">
                 <ul>
                     <li><h2>GLOWNET NETWORK SOLUTIONS</h2></li>
-                    <li><h5>GLOWNET IS A LEADING MOBILE DATA RESALER IN KENYA OFFERING
+                    <li><h5>GLOWNET IS A LEADING MOBILE DATA RESELLER IN KENYA OFFERING
                         A WIDE RANGE OF PRODUCTS AND SERVICES, INCLUDING VOICE, DATA,
                         TO MORE THAN 20 MILLION CUSTOMERS.</h5></li>
                 </ul>
