@@ -10,14 +10,14 @@
           </div>
         </div>
         <div class="column">
-          <div class="card" @click="toggle1Active" @keyup.enter="toggleActive">
+          <div class="card" @click="toggle1Active" @keyup.enter="toggle1Active">
             <footer class="card-footer">
               <a href="#" class="card-footer-item">Airtime</a>
             </footer>
           </div>
         </div>
         <div class="column">
-          <div class="card">
+          <div class="card" @click="toggleActivate" @keyup.enter="toggleActivate">
             <footer class="card-footer">
               <a href="#" class="card-footer-item">All in One</a>
             </footer>
@@ -52,7 +52,7 @@
       <label for="first-checkbox">
         <div class="sele1">
         <select v-model="selected2"
-         class="sele"  v-if="isActive">
+         class="sele" v-if="isActive" >
             <option  value="" id="sele1" class="selections">
               Available Data Deals options</option>
             <option class="selections" v-for="dat in Datas"
@@ -125,7 +125,7 @@ export default {
       selected3: '',
       selectedValue: '',
       secondSelectedValue: '',
-      isActive: false,
+      isActive: true,
       isClicked: false,
       selectedOption: null,
       selectedValidity: null,
@@ -174,7 +174,7 @@ export default {
           selected2: this.selected2,
         };
         console.log(data);
-        const response = axios.post('http://74.207.231.71//api/v1/credits/', data);
+        const response = axios.post('http://127.0.0.1:8000/api/v1/credits/', data);
         console.log(response.data);
         this.submitted = true;
       } catch (error) {
@@ -202,7 +202,12 @@ export default {
       this.isActive = !this.isActive;
     },
     toggle1Active() {
+      this.isActive = !this.isActive;
       this.isClicked = !this.isClicked;
+    },
+    toggleActivate() {
+      this.isClicked = true;
+      this.isActive = true;
     },
   },
 };
