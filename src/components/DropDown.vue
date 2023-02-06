@@ -28,7 +28,7 @@
             <button class="button is-primary">Activate</button>
           </div> -->
     <div class="togglers">
-    <div><h4>Select Data bundle Type</h4></div>
+    <div><h4>Select Data Bundles Type</h4></div>
     <label for="first-checkbox">
       <div>
         <div class="checks">
@@ -42,7 +42,7 @@
         <div class="columns is-mobile">
       <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValue"
             value="Buy Once">
-            Buy Bundles Once</div>
+            Buy Once</div>
           <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValue"
             value="autoRenew">Auto Renew</div>
         </div>
@@ -104,7 +104,7 @@
 </div>
 </div>
         <div class="subm" v-if="submitted">
-          <h3 style="center">You have purchased {{selected2}} {{selected3}}.
+          <h3 class="center">You have purchased {{selected2}} {{selected3}}.
             Please input M-Pesa pin when promted</h3>
         </div>
 </template>

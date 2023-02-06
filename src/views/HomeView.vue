@@ -3,7 +3,7 @@
     <div class="homee">
     <h1>Buy Bundles and Recharge Online</h1>
     <h2 class="data">Buy Data bundles at Discounts</h2>
-    <h2>Purchase bundles and airtime via credit/cheque card,M-pesa And Airtell Money.</h2>
+    <h2>Purchase bundles and airtime via credit/cheque card, M-pesa And Airtel Money.</h2>
     <span>
     <!-- <button class="btn" @click="scroll">Scroll Down for Offers</button> -->
   </span>
@@ -107,7 +107,8 @@ export default {
     justify-content: center;
     text-align: center;
     font-size: 1.7rem;
-    padding: 40px 6% 80px;
+    padding: 10px 6% 80px;
+    height: 40vh;
   }
   .home h1{
     font-weight: 500;
