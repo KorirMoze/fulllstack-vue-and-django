@@ -12,7 +12,7 @@
             <div class="column">
                 <ul>
                     <li><h3>GLOWNET</h3></li>
-                    <li><h4>Buy data bundles</h4></li>
+                    <li><h4>Buy Data bundles</h4></li>
                     <li><h4>Buy Airtime</h4></li>
                     <li><h4>Buy for A friend</h4></li>
                 </ul>

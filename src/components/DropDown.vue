@@ -42,7 +42,7 @@
         <div class="columns is-mobile">
       <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValue"
             value="Buy Once">
-            Buy Once</div>
+            Buy Bundles Once</div>
           <div class="column is-one-fifth-desktop"><input type="radio" v-model="selectedValue"
             value="autoRenew">Auto Renew</div>
         </div>
