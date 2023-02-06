@@ -104,8 +104,8 @@
 </div>
 </div>
         <div class="subm" v-if="submitted">
-          <h3>You have purchased {{selected2}} {{selected3}}.
-            Please input Mpesa pin when promted</h3>
+          <h3 style="center">You have purchased {{selected2}} {{selected3}}.
+            Please input M-Pesa pin when promted</h3>
         </div>
 </template>
 <script>
