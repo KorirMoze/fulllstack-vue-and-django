@@ -148,7 +148,7 @@ export default {
   methods: {
     getDatas() {
       axios
-        .get('/api/v1/persons/')
+        .get('http://74.207.231.71/persons/')
         .then((response) => {
           this.Datas = response.data;
         })
@@ -158,7 +158,7 @@ export default {
     },
     getAirtimes() {
       axios
-        .get('/api/v1/credits/')
+        .get('http://74.207.231.71/credits/')
         .then((response) => {
           this.Airtimes = response.data;
         })
@@ -174,7 +174,7 @@ export default {
           selected2: this.selected2,
         };
         console.log(data);
-        const response = axios.post('http://74.207.231.71/api/v1/credits/', data);
+        const response = axios.post('http://74.207.231.71/credits/', data);
         console.log(response.data);
         this.submitted = true;
       } catch (error) {
